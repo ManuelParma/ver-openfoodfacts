@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OpenffService } from '../openff.service';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  results!: any; 
+
+  constructor(private off: OpenffService) { }
 
   ngOnInit(): void {
   }
 
   kdown(event: any): void {
-    console.log(event)
+    if (!event.target?.value || event.target.value?.trim() === '')
+      return;
+    
+    this.off.searchItem(event.target?.value).subscribe(data => {
+      this.results = data;
+    });
   }
 
 }
