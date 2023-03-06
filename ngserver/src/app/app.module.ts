@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ItemComponent
+    ItemComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

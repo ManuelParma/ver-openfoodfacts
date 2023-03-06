@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OpenffService } from '../openff.service';
 
 @Component({
   selector: 'app-item',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
+  res!: any;
+  id: any = 0;
+
+  constructor(private off: OpenffService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get("id");
   }
 
 }

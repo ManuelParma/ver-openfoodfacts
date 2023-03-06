@@ -1,4 +1,4 @@
 <input class="form-control" (keyup)="kdown($event)" type="text" name="search" id="seach">
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let p of results"><img src="{{p.image}}" alt="{{p.id}}"><br><a href="javascript:void(0)" [routerLink]="['/item', p.id]">{{p.name}}</a></li>
+  <li class="list-group-item" *ngFor="let p of results"><app-product [prod]="p"></app-product></li>
 </ul>

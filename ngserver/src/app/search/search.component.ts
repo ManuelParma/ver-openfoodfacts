@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
       return;
     
     this.off.searchItem(event.target?.value, 1).subscribe(data => {
-      this.results = data.products.map((p: any) => {return {name: p.generic_name, image: p.image_url, id: p._id}});
+      this.results = data.products;
     });
   }
 
