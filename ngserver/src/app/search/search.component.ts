@@ -8,7 +8,7 @@ import { OpenffService } from '../openff.service';
 })
 export class SearchComponent implements OnInit {
 
-  results!: any; 
+  results!: any;
 
   constructor(private off: OpenffService) { }
 
@@ -19,8 +19,8 @@ export class SearchComponent implements OnInit {
     if (!event.target?.value || event.target.value?.trim() === '')
       return;
     
-    this.off.searchItem(event.target?.value).subscribe(data => {
-      this.results = data;
+    this.off.searchItem(event.target?.value, 1).subscribe(data => {
+      this.results = data.products.map((p: any) => {return {name: p.generic_name, image: p.image_url, id: p._id}});
     });
   }
 
