@@ -15,4 +15,9 @@ export class OpenffService {
     return this.http.get(url);
   }
 
+  public getItem(id: string): Observable<any> {
+    const url = `${this.baseUrl}api/v0/product/${id}`;
+    return this.http.get(url);
+  }
+
 }
