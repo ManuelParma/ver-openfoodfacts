@@ -1,5 +1,10 @@
-<div>
-  <img src="{{prod.image_url}}" alt="{{prod._id}}">
-  <br>
-  <a href="javascript:void(0)" [routerLink]="['/item', prod._id]">{{prod.product_name}}</a>
+<div class="card col-12">
+  <div>
+    <img class="img-fluid" src="{{ prod.image_url }}" alt="{{ prod._id }}" />
+  </div>
+  <div class="card-body">
+    <a href="javascript:void(0)" [routerLink]="['/item', prod._id]">{{
+      prod.product_name
+    }}</a>
+  </div>
 </div>

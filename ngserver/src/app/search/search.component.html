@@ -1,4 +1,4 @@
 <input class="form-control" (keyup)="kdown($event)" type="text" name="search" id="seach">
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let p of results"><app-product [prod]="p"></app-product></li>
+<ul class="list-inline">
+  <li class="list-inline-item" *ngFor="let p of results"><app-product [prod]="p"></app-product></li>
 </ul>
